@@ -1,0 +1,12 @@
+/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Shared/bin/Debug/net7.0/BlazorWebAssembly.Shared.deps.json
+/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Shared/bin/Debug/net7.0/BlazorWebAssembly.Shared.dll
+/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Shared/bin/Debug/net7.0/BlazorWebAssembly.Shared.pdb
+/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.csproj.AssemblyReference.cache
+/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.AssemblyInfoInputs.cache
+/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.AssemblyInfo.cs
+/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.csproj.CoreCompileInputs.cache
+/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.dll
+/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/refint/BlazorWebAssembly.Shared.dll
+/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.pdb
+/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/ref/BlazorWebAssembly.Shared.dll
