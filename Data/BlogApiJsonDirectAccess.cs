@@ -97,4 +97,34 @@ public class BlogApiJsonDirectAccess : IBlogApi
         Load<Category>(ref _categories, _settings.CategoriesFolder);
         return Task.CompletedTask;
     }
+
+    private async Task SaveAsync<T>(List<T>? list, string folder, string filename, T item)
+    {
+        var filepath = $@"{_settings.DataPath}/{folder}/{filename}";
+
+        await File.WriteAllTextAsync(filepath, JsonSerializer.Serialize<T>(item));
+
+        if (list == null)
+        {
+            list = new List<T>();
+        }
+
+        if (!list.Contains(item))
+        {
+            list.Add(item);
+        }
+    }
+
+    private void DeleteAsync<T>(List<T>? list, string folder, string id)
+    {
+        var filepath = $@"{_settings.DataPath}/{folder}/{id}.json";
+
+        try
+        {
+            File.Delete(filepath);
+        }
+        catch
+        {
+        }
+    }
 }
