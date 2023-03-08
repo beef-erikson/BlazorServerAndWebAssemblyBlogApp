@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "2egy+/j+qwCztWF/Z9O6aXz37OhscCSUon3wfsROZ7YHzt1AYr8BVTyFlfP04jyeMr/+SkXrfHsZrixO6xzI/g==",
-  "success": true,
+  "dgSpecHash": "6py13NNsZWngDtiSxyiB7X8kiwTY2Aua5k/X90EoCZx5DF7dIU6kGkPX6UVjKd2eJZBWs+ZeIJl3x5zpuv6GGw==",
+  "success": false,
   "projectFilePath": "/home/beef-erikson/RiderProjects/MyBlog/MyBlog/MyBlog.csproj",
   "expectedPackageFiles": [
     "/home/beef-erikson/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
@@ -43,5 +43,15 @@
     "/home/beef-erikson/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/home/beef-erikson/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Microsoft.NETCore.App.Host.arch-x64. No packages exist with this id in source(s): nuget.org",
+      "libraryId": "Microsoft.NETCore.App.Host.arch-x64",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
