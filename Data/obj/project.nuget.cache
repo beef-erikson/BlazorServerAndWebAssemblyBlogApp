@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "17N59EN5ga2MYlMK2KSXNHt85dV8S7vWaNJcgoaynMPcs6AAebzjwfJ7urvEuE7laf8mH2YbI/PoGRhyTC36bA==",
+  "dgSpecHash": "QzrPOH9fxEXAJm/F3c7mMeAgoGMNp1rWw9jgEkKo2rY/Pnf1xE4DRqFV8AO/GTKHmkzYWXny/yDgQK59FEcj0A==",
   "success": true,
   "projectFilePath": "/home/beef-erikson/RiderProjects/MyBlog/Data/Data.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/beef-erikson/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "/home/beef-erikson/.nuget/packages/microsoft.extensions.options/7.0.1/microsoft.extensions.options.7.0.1.nupkg.sha512",
+    "/home/beef-erikson/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
