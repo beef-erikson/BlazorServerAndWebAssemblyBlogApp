@@ -183,4 +183,32 @@ public class BlogApiJsonDirectAccess : IBlogApi
 
         return _blogPosts?.Count ?? 0;
     }
+
+    /// <summary>
+    /// Loads categories in list and returns list if present; new list otherwise.
+    /// </summary>
+    /// <returns>Categories list.</returns>
+    public async Task<List<Category>?> GetCategoriesAsync()
+    {
+        await LoadCategoriesAsync();
+        return _categories ?? new List<Category>();
+    }
+
+    /// <summary>
+    /// Loads categories into list and returns category Id if present  
+    /// </summary>
+    /// <param name="id">Id to review from list.</param>
+    /// <returns>_categories.Id of id if found.</returns>
+    /// <exception cref="Exception"></exception>
+    public async Task<Category?> GetCategoryAsync(string id)
+    {
+        await LoadCategoriesAsync();
+
+        if (_categories == null)
+        {
+            throw new Exception("Categories not found.");
+        }
+
+        return _categories.FirstOrDefault(b => b.Id == id);
+    }
 }
