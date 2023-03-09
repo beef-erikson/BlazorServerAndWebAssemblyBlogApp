@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Runtime.InteropServices.ComTypes;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
 using Data.Models;
@@ -271,5 +272,59 @@ public class BlogApiJsonDirectAccess : IBlogApi
         item.Id ??= Guid.NewGuid().ToString();
         await SaveAsync<Tag>(_tags, _settings.TagsFolder, $"{item.Id}.json", item);
         return item;
+    }
+
+    /// <summary>
+    /// Delete the blog post and removes item from collection using the specified id.
+    /// </summary>
+    /// <param name="id">BlogPost id to delete.</param>
+    /// <returns>Task.CompletedTask</returns>
+    public Task DeleteBlogPostAsync(string id)
+    {
+        DeleteAsync(_blogPosts, _settings.BlogPostsFolder, id);
+
+        var item = _blogPosts?.FirstOrDefault(b => b.Id == id);
+        if (item != null)
+        {
+            _blogPosts?.Remove(item);
+        }
+
+        return Task.CompletedTask;
+    }
+
+    /// <summary>
+    /// Delete the category and removes item from collection using the specified id.
+    /// </summary>
+    /// <param name="id">Category id to delete.</param>
+    /// <returns>Task.CompletedTask</returns>
+    public Task DeleteCategoryAsync(string id)
+    {
+        DeleteAsync(_categories, _settings.CategoriesFolder, id);
+
+        var item = _categories?.FirstOrDefault(b => b.Id == id);
+        if (item != null)
+        {
+            _categories?.Remove(item);
+        }
+        
+        return Task.CompletedTask;
+    }
+
+    /// <summary>
+    /// Delete the tag and removes item from collection using the specified id.
+    /// </summary>
+    /// <param name="id">Tag id to delete.</param>
+    /// <returns>Task.CompletedTask</returns>
+    public Task DeleteTagAsync(string id)
+    {
+        DeleteAsync(_tags, _settings.TagsFolder, id);
+
+        var item = _tags?.FirstOrDefault(b => b.Id == id);
+        if (item != null)
+        {
+            _tags?.Remove(item);
+        }
+
+        return Task.CompletedTask;
     }
 }
