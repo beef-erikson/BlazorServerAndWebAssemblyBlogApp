@@ -194,9 +194,9 @@ public class BlogApiJsonDirectAccess : IBlogApi
     /// <summary>
     /// Loads categories into list and returns category Id if present  
     /// </summary>
-    /// <param name="id">Id to review from list.</param>
+    /// <param name="id">Id to retrieve from list.</param>
     /// <returns>_categories.Id of id if found.</returns>
-    /// <exception cref="Exception"></exception>
+    /// <exception cref="Exception">Categories not found.</exception>
     public async Task<Category?> GetCategoryAsync(string id)
     {
         await LoadCategoriesAsync();
@@ -207,5 +207,69 @@ public class BlogApiJsonDirectAccess : IBlogApi
         }
 
         return _categories.FirstOrDefault(b => b.Id == id);
+    }
+
+    /// <summary>
+    /// Loads tags in list and returns list if present; new list otherwise.
+    /// </summary>
+    /// <returns>Tags list.</returns>
+    public async Task<List<Tag>?> GetTagsAsync()
+    {
+        await LoadTagsAsync();
+        return _tags ?? new List<Tag>();
+    }
+
+    /// <summary>
+    /// Loads categories into list and returns category Id if present.  
+    /// </summary>
+    /// <param name="id">Id to retrieve from list.</param>
+    /// <returns>_tags.Id if found.</returns>
+    /// <exception cref="Exception">Tags not found.</exception>
+    public async Task<Tag?> GetTagAsync(string id)
+    {
+        await LoadTagsAsync();
+
+        if (_tags == null)
+        {
+            throw new Exception("Tags not found.");
+        }
+
+        return _tags.FirstOrDefault(b => b.Id == id);
+    }
+
+    /// <summary>
+    /// Saves BlogPost item to disk in JSON format.
+    /// </summary>
+    /// <param name="item">BlogPost item to save.</param>
+    /// <returns>BlogPost item passed in.</returns>
+    public async Task<BlogPost?> SaveBlogPostAsync(BlogPost item)
+    {
+        item.Id ??= Guid.NewGuid().ToString();
+        await SaveAsync<BlogPost>(_blogPosts, _settings.BlogPostsFolder, $"{item.Id}.json", item);
+        return item;
+    }
+
+    /// <summary>
+    /// Saves Category item to disk in JSON format.
+    /// </summary>
+    /// <param name="item">Category item to save.</param>
+    /// <returns>Category item passed in.</returns>
+    public async Task<Category?> SaveCategoryAsync(Category item)
+    {
+        item.Id ??= Guid.NewGuid().ToString();
+        await SaveAsync<Category>(_categories, _settings.CategoriesFolder, $"{item.Id}.json", item);
+        return item;
+    }
+    
+    /// <summary>
+    /// Saves Tag item to disk in JSON format.
+    /// </summary>
+    /// <param name="item">item to save.</param>
+    /// <returns></returns>
+    public async Task<Tag?> SaveTagAsync(Tag item)
+    {
+        item.Id ??= Guid.NewGuid().ToString();
+        await SaveAsync<Tag>(_tags, _settings.TagsFolder, $"{item.Id}.json", item);
+        return item;
     }
 }
