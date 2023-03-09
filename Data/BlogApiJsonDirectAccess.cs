@@ -8,7 +8,7 @@ using Data.Models.Models;
 namespace Data;
 public class BlogApiJsonDirectAccess : IBlogApi
 {
-    private BlogApiJsonDirectAccessSetting _settings;
+    private readonly BlogApiJsonDirectAccessSetting _settings;
 
     private List<BlogPost>? _blogPosts;
     private List<Category>? _categories;
@@ -98,6 +98,14 @@ public class BlogApiJsonDirectAccess : IBlogApi
         return Task.CompletedTask;
     }
 
+    /// <summary>
+    /// Generic that checks list for item, adds if not present, writes to filename.
+    /// </summary>
+    /// <param name="list">List to parse.</param>
+    /// <param name="folder">Folder to write into.</param>
+    /// <param name="filename">Filename to write to.</param>
+    /// <param name="item">Item to add if not present to list.</param>
+    /// <typeparam name="T">Generic for various blog functions.</typeparam>
     private async Task SaveAsync<T>(List<T>? list, string folder, string filename, T item)
     {
         var filepath = $@"{_settings.DataPath}/{folder}/{filename}";
@@ -115,6 +123,13 @@ public class BlogApiJsonDirectAccess : IBlogApi
         }
     }
 
+    /// <summary>
+    /// Deletes JSON file.
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="folder">Folder where json resides.</param>
+    /// <param name="id">Filename to delete.</param>
+    /// <typeparam name="T"></typeparam>
     private void DeleteAsync<T>(List<T>? list, string folder, string id)
     {
         var filepath = $@"{_settings.DataPath}/{folder}/{id}.json";
@@ -126,5 +141,46 @@ public class BlogApiJsonDirectAccess : IBlogApi
         catch
         {
         }
+    }
+
+    /// <summary>
+    /// Loads blog posts and returns list is not null or new blogpost list.
+    /// </summary>
+    /// <param name="numberOfPosts"></param>
+    /// <param name="startIndex"></param>
+    /// <returns></returns>
+    public async Task<List<BlogPost>?> GetBlogPostsAsync(int numberOfPosts, int startIndex)
+    {
+        await LoadBlogPostsAsync();
+        return _blogPosts ?? new List<BlogPost>();
+    }
+
+    /// <summary>
+    /// Loads blog post list and returns BlogPost based on the string id, if found.
+    /// </summary>
+    /// <param name="id">id of blogpost to retrieve from list.</param>
+    /// <returns>BlogPost</returns>
+    /// <exception cref="Exception">_blogPost == null</exception>
+    public async Task<BlogPost?> GetBlogPostsAsync(string id)
+    {
+        await LoadBlogPostsAsync();
+
+        if (_blogPosts == null)
+        {
+            throw new Exception("Blog posts not found");
+        }
+
+        return _blogPosts.FirstOrDefault(b => b.Id == id);
+    }
+
+    /// <summary>
+    /// Populates _blogPost list and returns count.
+    /// </summary>
+    /// <returns>Number of BlogPost members.</returns>
+    public async Task<int> GetBlogPostCountAsync()
+    {
+        await LoadBlogPostsAsync();
+
+        return _blogPosts?.Count ?? 0;
     }
 }
