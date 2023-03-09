@@ -327,4 +327,17 @@ public class BlogApiJsonDirectAccess : IBlogApi
 
         return Task.CompletedTask;
     }
+
+    /// <summary>
+    ///  Nulls _blogPosts, _tags, and _categories.
+    /// </summary>
+    /// <returns>Task.CompletedTask</returns>
+    public Task ClearCacheAsync()
+    {
+        _blogPosts = null;
+        _tags = null;
+        _categories = null;
+        
+        return Task.CompletedTask;
+    }
 }
