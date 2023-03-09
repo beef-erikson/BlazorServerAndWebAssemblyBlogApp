@@ -112,10 +112,7 @@ public class BlogApiJsonDirectAccess : IBlogApi
 
         await File.WriteAllTextAsync(filepath, JsonSerializer.Serialize<T>(item));
 
-        if (list == null)
-        {
-            list = new List<T>();
-        }
+        list ??= new List<T>();
 
         if (!list.Contains(item))
         {
