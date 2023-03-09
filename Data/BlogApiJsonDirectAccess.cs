@@ -159,7 +159,7 @@ public class BlogApiJsonDirectAccess : IBlogApi
     /// <param name="id">id of blogpost to retrieve from list.</param>
     /// <returns>BlogPost</returns>
     /// <exception cref="Exception">_blogPost == null</exception>
-    public async Task<BlogPost?> GetBlogPostsAsync(string id)
+    public async Task<BlogPost?> GetBlogPostAsync(string id)
     {
         await LoadBlogPostsAsync();
 

@@ -19,5 +19,5 @@ public interface IBlogApi
     Task DeleteBlogPostAsync(string id);
     Task DeleteCategoryAsync(string id);
     Task DeleteTagAsync(string id);
-    Task InvalidateCacheAsync();
+    Task ClearCacheAsync();
 }
