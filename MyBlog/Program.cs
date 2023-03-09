@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using MyBlog.Areas.Identity;
 using MyBlog.Data;
+using Data;
+using Data.Models.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,15 @@ builder.Services.AddServerSideBlazor();
 builder.Services
     .AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
+// Blog Service
+builder.Services.AddOptions<BlogApiJsonDirectAccessSetting>().Configure(options =>
+{
+    options.DataPath = @"../../../Data/";
+    options.BlogPostsFolder = "Blogposts";
+    options.TagsFolder = "Tags";
+    options.CategoriesFolder = "Categories";
+});
+builder.Services.AddScoped<IBlogApi, BlogApiJsonDirectAccess>();
 
 var app = builder.Build();
 

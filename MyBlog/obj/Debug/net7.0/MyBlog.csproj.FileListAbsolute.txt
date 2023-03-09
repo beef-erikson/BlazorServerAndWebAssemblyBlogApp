@@ -76,3 +76,9 @@
 /home/beef-erikson/RiderProjects/MyBlog/MyBlog/obj/Debug/net7.0/MyBlog.pdb
 /home/beef-erikson/RiderProjects/MyBlog/MyBlog/obj/Debug/net7.0/MyBlog.genruntimeconfig.cache
 /home/beef-erikson/RiderProjects/MyBlog/MyBlog/obj/Debug/net7.0/ref/MyBlog.dll
+/home/beef-erikson/RiderProjects/MyBlog/MyBlog/bin/Debug/net7.0/Microsoft.Extensions.Options.dll
+/home/beef-erikson/RiderProjects/MyBlog/MyBlog/bin/Debug/net7.0/Data.dll
+/home/beef-erikson/RiderProjects/MyBlog/MyBlog/bin/Debug/net7.0/Data.Models.dll
+/home/beef-erikson/RiderProjects/MyBlog/MyBlog/bin/Debug/net7.0/Data.pdb
+/home/beef-erikson/RiderProjects/MyBlog/MyBlog/bin/Debug/net7.0/Data.Models.pdb
+/home/beef-erikson/RiderProjects/MyBlog/MyBlog/bin/Debug/net7.0/MyBlog.xml

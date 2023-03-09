@@ -1325,12 +1325,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.arch-x64",
-            "version": "[7.0.2, 7.0.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1339,19 +1333,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Unable to find package Microsoft.NETCore.App.Host.arch-x64. No packages exist with this id in source(s): nuget.org",
-      "libraryId": "Microsoft.NETCore.App.Host.arch-x64",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  }
 }

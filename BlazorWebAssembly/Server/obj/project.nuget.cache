@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "crOsr6k8dAHcAOQ6yaVFwmlLwH6ziFg7iIMx7wWiqPmy9a50VmeDwfBTPhMxoOgDo91yyLxhUwI8L/1IXs7APw==",
-  "success": false,
+  "dgSpecHash": "HnzxQeKtkIvPIBG7DgvozMSAJcoraRiXIO/UZtmPP433peC5TgzYOGWbSh6JV8aKvbVlJuYGHG/WaHngZ6MIaQ==",
+  "success": true,
   "projectFilePath": "/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Server/BlazorWebAssembly.Server.csproj",
   "expectedPackageFiles": [
     "/home/beef-erikson/.nuget/packages/microsoft.aspnetcore.authorization/7.0.2/microsoft.aspnetcore.authorization.7.0.2.nupkg.sha512",
@@ -32,15 +32,5 @@
     "/home/beef-erikson/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/home/beef-erikson/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Unable to find package Microsoft.NETCore.App.Host.arch-x64. No packages exist with this id in source(s): nuget.org",
-      "libraryId": "Microsoft.NETCore.App.Host.arch-x64",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

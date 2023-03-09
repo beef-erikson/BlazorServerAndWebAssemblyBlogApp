@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZMw1AaDnn2zlsPtoPHqUB9L8ZhOegyBF1cn/sjJYyX7IjEzWsHX1Ul2wFrYoEPg4DnY3kB0TnIiUPYV+tXGbjw==",
+  "dgSpecHash": "KLGcYV4+BlSncmy5SmZeYm3lVN12Ufegj1WCwXw5LC1b76RMZ0i6BB7Qy+9e6xQ2Q32XDVMbNE/tg/mk8GgJlg==",
   "success": true,
   "projectFilePath": "/home/beef-erikson/RiderProjects/MyBlog/BlazorWebAssembly/Client/BlazorWebAssembly.Client.csproj",
   "expectedPackageFiles": [
@@ -31,7 +31,7 @@
     "/home/beef-erikson/.nuget/packages/system.io.pipelines/7.0.0/system.io.pipelines.7.0.0.nupkg.sha512",
     "/home/beef-erikson/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/home/beef-erikson/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512",
-    "/home/beef-erikson/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/7.0.2/microsoft.netcore.app.runtime.mono.browser-wasm.7.0.2.nupkg.sha512"
+    "/home/beef-erikson/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/7.0.3/microsoft.netcore.app.runtime.mono.browser-wasm.7.0.3.nupkg.sha512"
   ],
   "logs": []
 }
